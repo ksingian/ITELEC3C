@@ -29,11 +29,11 @@ Route::middleware([
     })->name('dashboard');
 });
 
-// Route::get('/category', function () {
-//     return view('admin.category.category');
-// })->name('AllCat');
+ Route::get('/createcategory', function () {
+     return view('admin.category.createcategory');
+ })->name('CreateCat');
 
 //Category routes
 Route::get('/all/category', [CategoryController::class,'index'])->name('AllCat');
-Route::get('/create-category', [CategoryController::class, 'createCategory']);
-Route::post('/submit-category', [CategoryController::class, 'submitCategory']);
+Route::get('/create/category', [CategoryController::class, 'createCategory']);
+Route::post('/submit/category', [CategoryController::class, 'submitCategory']);

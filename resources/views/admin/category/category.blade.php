@@ -11,7 +11,7 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="card">
                             <table class="table">
                                 <thead>
@@ -19,7 +19,7 @@
                                         <th scope="col">Id</th>
                                         <th scope="col">Category Name</th>
                                         <th scope="col">User Id</th>
-                                        <th scope="col">Created At</th>
+                                        <th scope="col">Created By</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -34,24 +34,13 @@
                                         <th scope="row">{{$i++}}</th>
                                         <td>{{$category->category_name}}</td>
                                         <td>{{$category->user_id}}</td>
-                                        <td>{{$category->created_at}}</td>
+                                        <td>{{$category->name}}</td>
                                     </tr>
 
                                     @endforeach
 
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <form>
-                                <div class="form-group">
-                                    <label for="category_name">Category Name</label>
-                                    <input type="text" class="form-control" name="category_name">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>
                         </div>
                     </div>
                 </div>

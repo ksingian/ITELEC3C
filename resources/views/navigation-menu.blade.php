@@ -15,8 +15,11 @@
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link href="{{route('AllCat')}}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('AllCat') }}" :active="request()->routeIs('dashboard')">
                         All Category
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('CreateCat') }}" :active="request()->routeIs('dashboard')">
+                        Create Category
                     </x-nav-link>
                 </div>
             </div>
