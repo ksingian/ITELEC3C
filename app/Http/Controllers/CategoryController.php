@@ -6,19 +6,17 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    //Create Category
-    public function createCategory()
+    // Method to create a new category
+    public function create()
     {
-        return view('form.create');
-    }
+        // Add validation as needed
+        $data = request()->validate([
+            'name' => 'required|string|max:255',
+        ]);
 
-    public function submitCategory(Request $request)
-    {
-        $category = new Category;
-        $category->name = $request->cat_name;
-        $category->description = $request->cat_desc;
-        $category->save();
-        return redirect('/categories')->with('status', 'New Category has been added');
+        Category::create($data);
+
+        return redirect()->route('categories.index');
     }
 
     public function index() {
